@@ -130,6 +130,36 @@ body {
     background: #866a3c;
 }
 
+/* ──────────────────────────────
+   Modal Glass Effect
+────────────────────────────── */
+.modal {
+    backdrop-filter: blur(8px);
+}
+
+.glass-modal {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content {
+    animation: fadeZoom 0.3s ease-in-out;
+}
+
+@keyframes fadeZoom {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 </style>
 </head>
 
@@ -143,7 +173,7 @@ body {
     <a href="<%=request.getContextPath()%>/ViewReservationServlet"><span class="material-icons">receipt_long</span> View Reservations</a>
     <a href="<%=request.getContextPath()%>/RoomManagementServlet" class="active"><span class="material-icons">meeting_room</span> Rooms Management</a>
     <a href="<%=request.getContextPath()%>/Views/Help.jsp"><span class="material-icons">support_agent</span> Help</a>
-    <a href="<%=request.getContextPath()%>/logout"><span class="material-icons">logout</span> Logout</a>
+    <a href="#" data-bs-toggle="modal" data-bs-target="#logoutModal"><span class="material-icons">logout</span> Logout</a>
 </div>
 
 <div class="content">
@@ -229,5 +259,38 @@ body {
 </div>
 
 </div>
+
+		<!-- Logout Confirmation Modal -->
+			<div class="modal fade" id="logoutModal" tabindex="-1">
+			  <div class="modal-dialog modal-dialog-centered">
+			    <div class="modal-content glass-modal border-0">
+			
+			      <div class="modal-header border-0">
+			        <h5 class="modal-title text-white fw-bold">
+			          Confirm Logout
+			        </h5>
+			        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+			      </div>
+			
+			      <div class="modal-body text-center text-white">
+			        <p class="fs-5">Are you sure you want to logout?</p>
+			      </div>
+			
+			      <div class="modal-footer border-0 justify-content-center">
+			        <button type="button" class="btn btn-light px-4" data-bs-dismiss="modal">
+			          Cancel
+			        </button>
+			
+			        <a href="<%=request.getContextPath()%>/logout" 
+			           class="btn btn-danger px-4">
+			          Yes, Logout
+			        </a>
+			      </div>
+			
+			    </div>
+			  </div>
+			</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
