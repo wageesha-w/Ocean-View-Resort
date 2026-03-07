@@ -167,7 +167,7 @@ public class ReservationDAO {
         return 0;
     }
 
-    // 10. COUNT TODAY'S CHECK-INS  ← NEW
+    // 10. COUNT TODAY'S CHECK-INS  
     public int countTodayCheckIns() {
         String sql = "SELECT COUNT(*) FROM reservations "
                    + "WHERE check_in = CURDATE() AND status = 'Confirmed'";
@@ -179,7 +179,7 @@ public class ReservationDAO {
         return 0;
     }
 
-    // 11. TOTAL REVENUE  ← NEW
+    // 11. TOTAL REVENUE  
     public double getTotalRevenue() {
         String sql = "SELECT COALESCE(SUM(total_bill), 0) FROM reservations "
                    + "WHERE status = 'Completed'";
@@ -191,7 +191,7 @@ public class ReservationDAO {
         return 0;
     }
 
-    // 12. GET RECENT N RESERVATIONS  ← NEW
+    // 12. GET RECENT N RESERVATIONS 
     public List<ReservationBean> getRecentReservations(int limit) {
         List<ReservationBean> list = new ArrayList<>();
         String sql = "SELECT res.*, ro.room_number, rt.type_name "

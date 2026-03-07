@@ -13,8 +13,6 @@ import com.OceanViewResort.Dao.RoomDAO;
 import com.OceanViewResort.Model.RoomBean;
 
 
-
-
 @WebServlet("/CheckAvailabilityServlet")
 public class CheckAvailabilityServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -40,3 +38,7 @@ request.getRequestDispatcher("/Views/Dashboard.jsp");
 rd.forward(request, response);
 }
 }
+
+
+
+

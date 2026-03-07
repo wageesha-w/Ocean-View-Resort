@@ -1,4 +1,4 @@
-package com.OceanViewResort.Tests;
+package com.OceanViewResort.DaoTests;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -27,7 +27,7 @@
 	
 	            if (rs.next()) {
 	                isValid = true;
-	                admin.setAdminId(rs.getInt("admin_id")); // set adminId to bean
+	                admin.setAdminId(rs.getInt("admin_id")); 
 	            }
 	
 	        } catch (SQLException e) {
